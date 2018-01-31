@@ -6,8 +6,9 @@ export const capitalize = (str) => {
   	ascii = ascii -21
   }
   
-  input[0] = string.fromCharCode(ascii)
-  
+  var first = string.fromCharCode(ascii)
+  input[0] = first
+
   str = input.join()
   return str;
  }
