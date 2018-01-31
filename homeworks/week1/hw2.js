@@ -8,6 +8,6 @@ export const capitalize = (str) => {
   
   input[0] = String.fromCharCode(ascii)
 
-  str = input.join()
+  str = input.toString()
   return str;
  }
