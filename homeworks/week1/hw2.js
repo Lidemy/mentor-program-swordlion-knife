@@ -1,10 +1,11 @@
 export const capitalize = (str) => {
   var input = [str]
-  if(input[0]>=97 && input[0]<=122){
-  	input[0] = input[0] -21
+  var ascii = "str".charCodeAt(0)
+  if(ascii >= 97 && ascii <= 122){
+  	ascii = ascii -21
+  	input[0] = string.fromCharCode(ascii)
   }
-
   
   str = input.join()
   return str;
-}
+ }
