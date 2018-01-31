@@ -3,6 +3,6 @@ export const capitalize = (str) => {
   if(input[0]>=97 && input[0]<=122){
   	input[0] = input[0] -21
   }
-  str = array.tostring(input[])
+  str = array.tostring(input)
   return str;
 }
