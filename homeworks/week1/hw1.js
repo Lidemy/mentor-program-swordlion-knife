@@ -1,12 +1,14 @@
 export const stars = (n) => {
-  return;
+  var star = new array(n)
+  
+	for (var a = 0; a < n; a++){
+	  	if (a!=n-1){
+	  		star(a) = "*".repeat(a+1)+"\n"
+	  	}
+	  	else {
+	  		star(a) = "*".repeat(a+1)
+	  	}
+	  }
+  return star(n);
 }
 
-for (var a = 0; a < n ; a++)
-{
-	for (var b = 0; b < a; b++)
-	{
-		console.log(*)
-	}
-	console.log(\n)
-}
