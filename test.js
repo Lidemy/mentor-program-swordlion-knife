@@ -1,1 +1,1 @@
-console.log('n'.charCodeAt(0))
+console.log('nick'.charCodeAt(0))
