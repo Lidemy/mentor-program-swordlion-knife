@@ -1,5 +1,7 @@
 export const capitalize = (str) => {
   var input = [str]
-  input[0] = stringObject.toUpperCase(input[0])
+  if(input[0]>=97 && input[0]<=122){
+  	input[0] = input[0] -21
+  }
   return input;
 }
