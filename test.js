@@ -1,1 +1,2 @@
-console.log('nick'.charCodeAt(0))
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.toString())
