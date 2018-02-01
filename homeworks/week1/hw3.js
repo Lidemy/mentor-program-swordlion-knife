@@ -4,7 +4,7 @@ export const isPrime = (n) => {
 	 	return false;
 	 }
 	 else if (n == 2){
-	 	return false;
+	 	return true;
 	 }
   for (var a = 2; a < n ; a++){
      if ( n % a == 0) {

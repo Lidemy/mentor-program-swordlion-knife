@@ -11,6 +11,6 @@ describe("hw3", () => {
     expect(isPrime(13)).toBe(true)
   })
   it("should return correct answer when n = 2", () => {
-    expect(isPrime(2)).toBe(false)
+    expect(isPrime(2)).toBe(true)
   })
 })
