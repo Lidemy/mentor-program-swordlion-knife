@@ -7,9 +7,7 @@ export const isPalindromes = (str) => {
   for (var b = 0 ; b < str.length ; b ++){
   	if (input[b] != newinput[b]){
   		return false;
-  	}
-  	else{
-  		return true;
-  	}
-  }
-}
+  	} 
+   }
+   return true;
+}   
