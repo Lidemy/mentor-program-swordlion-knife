@@ -8,6 +8,8 @@ export const isPalindromes = (str) => {
   	if (input[b] != newinput[b]){
   		return false;
   	}
-  	return true;
+  	else{
+  		return true;
+  	}
   }
 }
