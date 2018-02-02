@@ -10,15 +10,15 @@ export const add = (a, b) => {
  	 	output.push(parseInt(inputa[c])+parseInt(inputb[c]))
  	 }
  	for ( var e = inputb.length; e < inputa.length ; e++){
-        output.push(parseInt(inputa[c]))
+        output.push(parseInt(inputa[e]))
  	 }	
   }
   else{
   	for ( var g = 0; g < inputa.length ; g++){
- 	 	output.push(parseInt(inputa[c])+parseInt(inputb[c]))
+ 	 	output.push(parseInt(inputa[g])+parseInt(inputb[g]))
  	 }
  	for ( var f = inputa.length; f < inputb.length ; f++){
-        output.push(parseInt(inputa[c]))
+        output.push(parseInt(inputa[f]))
  	 }	
   }
 
