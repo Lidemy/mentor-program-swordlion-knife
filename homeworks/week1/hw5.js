@@ -7,7 +7,7 @@ export const add = (a, b) => {
 
   function plus(n) {
   	for ( var c = 0; c < b.length ; c++){
-  		return n + parseInt(input[c] , 10)
+  		return n + parseInt(inputb[c] , 10)
   	}
   }
 
