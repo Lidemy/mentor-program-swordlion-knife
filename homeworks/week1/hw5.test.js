@@ -13,4 +13,7 @@ describe("hw5", () => {
   it("should return correct answer when a=369 and b=31", () => {
     expect(add('369', '31')).toBe('400')
   })
+  it("should return correct answer when a=999 and b=1", () => {
+    expect(add('999', '1')).toBe('1000')
+  })
 })
