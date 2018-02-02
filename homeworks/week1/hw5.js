@@ -29,9 +29,7 @@ export const add = (a, b) => {
   		output[d] = parseInt(output[d]) % 10 
   	}
   }
-  if (output[output.length-1] >=  10 ){
-  		output.push(Math.floor(parseInt(output[output.length-1]/10)))
-  	}
+  
 
   output.reverse()
 
