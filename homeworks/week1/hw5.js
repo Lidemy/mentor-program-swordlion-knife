@@ -13,5 +13,5 @@ export const add = (a, b) => {
 
   inputa.map(plus)
 
-  console.log(inputa)
+  return parseInt(inputa.reverse(),10);
 }
