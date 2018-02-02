@@ -25,8 +25,8 @@ export const add = (a, b) => {
 
   for ( var d = 0 ; d < output.length ; d++) {
   	if (parseInt(output[d]) >= 10){
-  		output[d] = parseInt(output[d]) % 10 
   		output[d+1] = parseInt(output[d+1]) + Math.floor(parseInt(output[d]) / 10)
+  		output[d] = parseInt(output[d]) % 10 
   	}
   }
 
