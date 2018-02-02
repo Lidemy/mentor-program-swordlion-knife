@@ -18,7 +18,7 @@ export const add = (a, b) => {
   for ( var d = 0 ; d < output.length ; d++) {
   	if (output[d] > 10){
   		output[d] = output[d] % 10 
-  		output[d+1] = output[d+1] + (output[d]-outpu[d]%10)/10 
+  		output[d+1] = output[d+1] + (output[d]-output[d]%10)/10 
   	}
   }
 
