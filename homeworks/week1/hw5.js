@@ -25,6 +25,6 @@ export const add = (a, b) => {
   }
 
   output.reverse()
-  output.join()
-  return output;
+   
+  return output.join('');
 } 
