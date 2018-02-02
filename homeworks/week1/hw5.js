@@ -4,14 +4,24 @@ export const add = (a, b) => {
   var output = []
   inputa.reverse()
   inputb.reverse()
-
-  function plus(n) {
-  	for ( var c = 0; c < b.length ; c++){
-  		return n + parseInt(inputb[c] , 10)
+  
+  if (inputa.length > inputb.length){
+ 	for ( var c = 0; c < inputa.length ; c++){
+ 	 	output.push(inputa[c]+inputb[c])
+ 	 }
+  }
+  else{
+  	for ( var c = 0; c < inputb.length ; c++){
+ 	 	output.push(inputa[c]+inputb[c])
+ 	 }
+  }
+  for ( var d = 0 ; d < output.length ; d++) {
+  	if (output[d] > 10){
+  		output[d] = output[d] % 10 
+  		output[d+1] = output[d+1] + (output[d]-outpu[d]%10)/10 
   	}
   }
 
-  inputa.map(plus)
-
-  return parseInt(inputa.reverse(),10);
-}
+  output.reverse()
+  return parseInt(output,10);
+} 
