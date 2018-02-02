@@ -1,3 +1,17 @@
 export const add = (a, b) => {
-  return parseInt(a, 10) + parseInt(b, 10);
+  var inputa = a.split('')
+  var inputb = b.split('')
+  var output = []
+  inputa.reverse()
+  inputb.reverse()
+
+  function plus(n) {
+  	for ( var c = 0; c < b.length ; c++){
+  		return n + parseInt(input[c] , 10)
+  	}
+  }
+
+  inputa.map(plus)
+
+  console.log(inputa)
 }
