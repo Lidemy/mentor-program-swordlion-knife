@@ -7,4 +7,7 @@ describe("hw5", () => {
   it("should return correct answer when a=12312383813881381381 and b=129018313819319831", () => {
     expect(add('12312383813881381381', '129018313819319831')).toBe('12441402127700701212')
   })
+  it("should return correct answer when a=369 and b=133", () => {
+    expect(add('369', '133')).toBe('500')
+  })
 })
