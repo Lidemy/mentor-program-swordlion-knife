@@ -18,7 +18,7 @@ export const add = (a, b) => {
  	 	output.push(parseInt(inputa[g])+parseInt(inputb[g]))
  	 }
  	for ( var f = inputa.length; f < inputb.length ; f++){
-        output.push(parseInt(inputa[f]))
+        output.push(parseInt(inputb[f]))
  	 }	
   }
 
@@ -29,7 +29,7 @@ export const add = (a, b) => {
   		output[d] = parseInt(output[d]) % 10 
   	}
   }
-  
+
 
   output.reverse()
 
