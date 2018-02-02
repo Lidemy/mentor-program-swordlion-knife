@@ -23,5 +23,6 @@ export const add = (a, b) => {
   }
 
   output.reverse()
-  return parseInt(output,10);
+  output.join('')
+  return output;
 } 
