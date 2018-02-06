@@ -1,8 +1,9 @@
 export const stars = (n) => {
-    var Array = []
-    Array.fill()
-    Array.map((n , index) => '*'.repeat(index+1))
-
-    return Array 
+  var star = []
+  
+	for (var a = 0; a < n; a++) {
+	  	star[a] = "*".repeat(a+1)
+	  }
+  return star
 }
 
