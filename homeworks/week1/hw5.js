@@ -5,7 +5,7 @@ export const add = (a, b) => {
   
   if (inputa.length > inputb.length){
     for ( var c = 0; c < inputb.length ; c++){
-     	output.push(parseInt(inputa[c])+parseInt(inputb[c]))
+     	output.push(inputa[c]+parseInt(inputb[c]))
     }
     for ( var e = inputb.length; e < inputa.length ; e++){
       output.push(parseInt(inputa[e]))
