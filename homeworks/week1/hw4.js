@@ -1,12 +1,11 @@
 export const isPalindromes = (str) => {
   var input = str.split('')
-  var newinput = input.reverse()
-  var error = 0
+  var newinput = str.split('').reverse()
 
   for (var b = 0 ; b < str.length ; b ++) {
   	if (input[b] != newinput[b]) {
-  		error += 1
+  		return false
   	} 
   }
-  return error
+  return true
 }   
