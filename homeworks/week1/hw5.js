@@ -1,9 +1,7 @@
 export const add = (a, b) => {
-  var inputa = a.split('')
-  var inputb = b.split('')
+  var inputa = a.split('').reverse()
+  var inputb = b.split('').reverse()
   var output = []
-  inputa.reverse()
-  inputb.reverse()
   
   if (inputa.length > inputb.length){
     for ( var c = 0; c < inputb.length ; c++){

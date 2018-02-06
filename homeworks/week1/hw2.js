@@ -2,7 +2,7 @@ export const capitalize = (str) => {
   var input = str.split('')
   var ascii = str.charCodeAt(0)
 
-  if(ascii >= 97 && ascii <= 122){
+  if(ascii >= 97 && ascii <= 122) {
   	ascii = ascii -32
   }
   
