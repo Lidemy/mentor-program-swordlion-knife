@@ -1,32 +1,30 @@
 export const add = (a, b) => {
-  var inputa = a.split('')
-  var inputb = b.split('')
+  var inputa = a.split('').reverse()
+  var inputb = b.split('').reverse()
   var output = []
-  inputa.reverse()
-  inputb.reverse()
   
-  if (inputa.length > inputb.length){
- 	for ( var c = 0; c < inputb.length ; c++){
- 	 	output.push(parseInt(inputa[c])+parseInt(inputb[c]))
- 	 }
- 	for ( var e = inputb.length; e < inputa.length ; e++){
-        output.push(parseInt(inputa[e]))
- 	 }	
+  if (inputa.length > inputb.length) {
+    for ( var c = 0; c < inputb.length ; c++) {
+     	output.push(parseInt(inputa[c])+parseInt(inputb[c]))
+    }
+    for ( var d = inputb.length; d < inputa.length ; d++) {
+      output.push(parseInt(inputa[d]))
+    }	
   }
   else{
-  	for ( var g = 0; g < inputa.length ; g++){
- 	 	output.push(parseInt(inputa[g])+parseInt(inputb[g]))
- 	 }
- 	for ( var f = inputa.length; f < inputb.length ; f++){
-        output.push(parseInt(inputb[f]))
- 	 }	
+  	for ( var e = 0; e < inputa.length ; e++) {
+     	output.push(parseInt(inputa[e])+parseInt(inputb[e]))
+    }
+ 	  for ( var f = inputa.length; f < inputb.length ; f++) {
+      output.push(parseInt(inputb[f]))
+ 	  }	 
   }
 
 
-  for ( var d = 0 ; d < output.length-1 ; d++) {
-  	if (parseInt(output[d]) >= 10){
-  		output[d+1] = parseInt(output[d+1]) + Math.floor(parseInt(output[d]) / 10)
-  		output[d] = parseInt(output[d]) % 10 
+  for ( var g = 0 ; g < output.length-1 ; g++) {
+  	if (parseInt(output[g]) >= 10) {
+  		output[g+1] = parseInt(output[g+1]) + Math.floor(parseInt(output[g]) / 10)
+  		output[g] = parseInt(output[g]) % 10 
   	}
   }
 
