@@ -14,14 +14,14 @@
 			}
 			.navbar_navbar {
 				position: relative;
-				font-size: 20px;
+				font-size: 25px;
 				color:white;
 				display:inline-block;
 				margin-left:15px;
 				margin-top: 12px;
 			}
 			.navbar ul {
-				font-size: 15px;
+				font-size: 18px;
 				color:grey;
 				display: inline-block;
 				margin-left: 3px;
@@ -36,19 +36,17 @@
 				cursor:pointer;
 			}
 			.bigtopic {
-				position: fixed;
+				position: relative;
 				width:100%;
 				margin-top:50px;
 				padding: 20px 40px;
-				display: block;
 				background: lightgrey;
-				left:0px;
-				top:0px;
+				left:-10px;
 			}
 			.container {
 				position: relative;
 				width:100%;
-				margin :0px 50px;
+				margin :0px 20px;
 				padding: 20px 0px;
 			}
 			h {
@@ -56,9 +54,9 @@
 				display: block;
 			}
 			p {
-				font-size: 15x;
+				font-size: 15px;
 				display: block;
-				width:900px;
+				width:60%;
 			}
 			.bigtopic_learnmore {
 				font-size: 25px;
@@ -74,11 +72,9 @@
 				background:#253e46;
 			}
 			.topic1 {
-				position: fixed;
+				position: relative;
 				display:block; 
-				top:300px;
-				width:100%;
-				margin-top:50px;
+				width:80%;
 				padding: 20px 40px;
 				left:0px;
 			}
@@ -88,7 +84,14 @@
 			}
 			.topic_h1 {
 				font-size: 40px;
-				margin: 10px 0px;
+				margin-top:30px;
+				margin-bottom: 10px;
+			}
+			.border + .topic_h1 {
+				margin-top: 0px;
+			}
+			.topic_p1 {
+				width:90%;
 			}
 			.detailview {
 				font-size: 16px;
@@ -108,6 +111,15 @@
 				margin-top:50px;
 				font-size: 20px;
 				border-top:1px solid lightgrey;
+			}
+			@media (max-width: 750px) {
+				.bigtopic h {
+					font-size: 60px;
+					width:80%;
+				}
+				.border {
+					width:80%;
+				}
 			}
 		</style>
 	</head>
