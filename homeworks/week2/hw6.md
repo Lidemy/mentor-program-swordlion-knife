@@ -18,7 +18,7 @@ inline (行內元素)
 可以使用span包裹一些文字，用CSS改變其樣式之後也不會打亂原本的版面配置
 
 block (區塊元素)
-一個區塊元素可以讓其內容換行，並盡可能稱滿container
+一個區塊元素可以讓其內容換行，並盡可能撐滿container
 
 inline-block
 跟inline類似，但可以不使用float，轉而使用inline-block去達到自動排版的效果
@@ -32,7 +32,7 @@ relative
 可以透過不同元素設定relative屬性來達到相對位置，也可以設定上下左右使元素相對地調整原本該出現的所在位置
 
 absolute
-跟fixed屬性類似，但absolute屬性的元素會相對他所屬上層容器移動，如果沒有就會相對於body元素最左上角的絕對位置
+跟fixed屬性類似，但absolute屬性的元素會相對他上層potiotion不是static的容器移動，如果沒有就會相對於body元素最左上角的絕對位置
 
 fixed
 設定fixed屬性的元素會相對於瀏覽器視窗來定位，即使頁面捲動fixed屬性的元素還是會固定在相同的位置
