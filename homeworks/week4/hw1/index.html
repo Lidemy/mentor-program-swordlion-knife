@@ -38,9 +38,10 @@
 
 		<script type="text/javascript">
 			document.addEventListener('DOMContentLoaded' , function () {
-				document.querySelector('.button').addEventListener('click', (e) => {
-				document.querySelector('.number').innerText = e.target.innerText;
-				console.log(e.target)
+				document.querySelector('.container').addEventListener('click', (e) => {
+					if(e.target.className === 'button') {
+						document.querySelector('.number').innerText += e.target.innerText;
+					}
 				})
 			})
 		</script>
@@ -54,29 +55,31 @@
 				<button class='button'>7</button>
 				<button class='button'>8</button>
 				<button class='button'>9</button>
-				<button class='button'>÷</button>
+				<button class='calculater'>÷</button>
 			</div>
 
 			<div class='row'>
 				<button class='button'>4</button>
 				<button class='button'>5</button>
 				<button class='button'>6</button>
-				<button class='button'>×</button>
+				<button class='calculater'>×</button>
 			</div>
 
 			<div class='row'>
 				<button class='button'>1</button>
 				<button class='button'>2</button>
 				<button class='button'>3</button>
-				<button class='button'>-</button>
+				<button class='calculater'>-</button>
 			</div>
 
 			<div class='row'>
 				<button class='button'>0</button>
 				<button class='button'>.</button>
-				<button class='button'>=</button>
-				<button class='button'>+</button>
+				<button class='calculater'>=</button>
+				<button class='calculater'>+</button>
 			</div>
 		</div>
+
+
 	</body>
 </html>
