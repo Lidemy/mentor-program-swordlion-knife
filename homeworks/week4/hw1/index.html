@@ -1,0 +1,82 @@
+<html>
+	<head>
+
+		<style>
+			.container {
+				position: fixed;
+				width:30%;
+				border:1px solid;
+			}
+
+			.number {
+				position: relative;
+				display: flex;
+				width: 80%; 
+				margin:20px auto;
+				justify-content: flex-end;
+				border: 1px solid;
+			}
+
+			.row {
+				display: flex;
+				justify-content: space-around;
+				font-size: 15px;
+			}
+			
+			.row:last-child {
+				margin-bottom: 10px;
+			}
+
+			button {
+				margin-top: 10px;
+				width:22%;
+				font-size: 15px;
+				font-family: 微軟正黑體;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded' , function () {
+				document.querySelector('.button').addEventListener('click', (e) => {
+				document.querySelector('.number').innerText = e.target.innerText;
+				console.log(e.target)
+				})
+			})
+		</script>
+
+	</head>
+
+	<body>
+		<div class='container'>
+			<h1 class='number'>0</h1>
+			<div class='row'>
+				<button class='button'>7</button>
+				<button class='button'>8</button>
+				<button class='button'>9</button>
+				<button class='button'>÷</button>
+			</div>
+
+			<div class='row'>
+				<button class='button'>4</button>
+				<button class='button'>5</button>
+				<button class='button'>6</button>
+				<button class='button'>×</button>
+			</div>
+
+			<div class='row'>
+				<button class='button'>1</button>
+				<button class='button'>2</button>
+				<button class='button'>3</button>
+				<button class='button'>-</button>
+			</div>
+
+			<div class='row'>
+				<button class='button'>0</button>
+				<button class='button'>.</button>
+				<button class='button'>=</button>
+				<button class='button'>+</button>
+			</div>
+		</div>
+	</body>
+</html>
