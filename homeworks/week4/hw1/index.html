@@ -37,11 +37,103 @@
 		</style>
 
 		<script type="text/javascript">
+			
+			let controller =false;
+			let math = '';
+			let input = '';
+			let input2= '';
+
 			document.addEventListener('DOMContentLoaded' , function () {
 				document.querySelector('.container').addEventListener('click', (e) => {
-					if(e.target.className === 'button') {
-						document.querySelector('.number').innerText += e.target.innerText;
+					let result = document.querySelector('.number');
+					
+					if (e.target.className === 'AC') {
+						result.innerText = '0';
+						controller =false;
+						math = '';
+						input = '';
+						input2= '';
 					}
+
+					if(e.target.className === 'button') {
+						if (result.innerText == '0' && e.target.innerText !== '.' ) {
+							result.innerText = '';
+						}
+						else if (result.innerText == '0' && e.target.innerText === '.') {
+							result.innerText = '0.';
+						}
+						
+						if (controller) {
+							 if(e.target.innerText === '.') {
+							 	result.innerText = '0.';
+							 	controller = false;
+							 } 
+							 else {
+							 	result.innerText = e.target.innerText;
+							 	controller = false;
+							 }
+						}
+						else {
+							if(e.target.innerText === '.' && !result.innerText.includes('.')) {
+								result.innerText += e.target.innerText;
+							}
+							else if (e.target.innerText !== '.') {
+								result.innerText += e.target.innerText;
+							}
+						}
+					}
+
+					if(e.target.className === 'calculater') {
+						//連續加減乘除
+						if (math && !controller){
+							var input2 = parseFloat(result.innerText);
+							if (math === '+') {
+								result.innerText = input + input2;
+							}
+							if (math === '-') {
+								result.innerText = input - input2;
+							}
+							if (math === '×') {
+								result.innerText = input * input2;
+							}
+							if (math === '÷') {
+								result.innerText = input / input2;
+							}
+							if (math === '%') {
+								result.innerText = input % input2;
+							}
+							input = parseFloat(result.innerText);
+							controller = true;
+							math = e.target.innerText;
+						}
+						else {
+							input = parseFloat(result.innerText);
+							math = e.target.innerText;
+							controller = true;
+						}	
+					}
+
+					if(e.target.className === 'equal') {
+						var input2 = parseFloat(result.innerText);
+						if (math === '+') {
+							result.innerText = input + input2;
+						}
+						if (math === '-') {
+							result.innerText = input - input2;
+						}
+						if (math === '×') {
+							result.innerText = input * input2;
+						}
+						if (math === '÷') {
+							result.innerText = input / input2;
+						}
+						if (math === '%') {
+							result.innerText = input % input2;
+						}
+						math = '';
+						controller = true;
+					}
+
 				})
 			})
 		</script>
@@ -51,6 +143,12 @@
 	<body>
 		<div class='container'>
 			<h1 class='number'>0</h1>
+			<div class='row'>
+				<button class='useless'>X</button>
+				<button class='useless'>X</button>
+				<button class='calculater'>%</button>
+				<button class='AC'>AC</button>
+			</div>
 			<div class='row'>
 				<button class='button'>7</button>
 				<button class='button'>8</button>
@@ -75,7 +173,7 @@
 			<div class='row'>
 				<button class='button'>0</button>
 				<button class='button'>.</button>
-				<button class='calculater'>=</button>
+				<button class='equal'>=</button>
 				<button class='calculater'>+</button>
 			</div>
 		</div>
