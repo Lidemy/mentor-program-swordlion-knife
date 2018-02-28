@@ -6,39 +6,60 @@
 			margin:auto;
 			width:80%;
 		}
+		.container {
+			display: flex;
+			justify-content: space-around;
+		}
 		.block {
 			top:0px;
-			position: relative;
 			display: inline-block;
-			width:30%;
-			height: 60%;
+			width:325px;
+			height: 270px;
 			margin:20px 10px;
 			left:50px;
+			background: #393b3e;
+			overflow: hidden;
+		}
+		.livepic {
+			left:5px;
 		}
 		.livesmall {
-			width:15%;
-			height:20%;
+			position: relative;
+			width:45px;
+			height:60px;
 			margin-left:5px;
 			margin-top:15px;
-			border-image-repeat:stretch;
-			display: inline-block;
 			border-radius: 50%;
 			border:0.5px solid;
 		}
 		.text {
+			position: relative;
 			display: inline-block;
 			margin:10px;
 			font-size: 15px;
-			bottom:10px;
-			overflow: hidden;
+			bottom:40px;
+			left:10px;
+			width:250px;
+			color: white;
+		}
+		.text_2 {
+			position: relative;
+			display: inline-block;
+			margin:10px;
+			font-size: 15px;
+			bottom:45px;
+			left:65px;
+			width:250px;
+			color: white;
 		}
 		</style>
 
 
 		<script type="text/javascript">
 			var text = "";
+			var array = [];
 
-			document.addEventListener('DOMContentLoaded' , function () {
+			document.addEventListener('DOMContentLoaded' , function (e) {
 				var request = new XMLHttpRequest();
 
 				request.open('get','https://api.twitch.tv/kraken/streams?game=League%20of%20Legends&limit=20' ,true);
@@ -49,19 +70,27 @@
 					if(request.status >= 200 && request.status < 400) {
 						var resp = request.responseText;
 						var posts = JSON.parse(resp).streams;
+						let str="<div class='littleblock'>"
+						let str2="</div>"
 						console.log(posts[0]);
 						for ( var a = 0; a <20; a++) {
-							if(posts[a]["channel"]["status"].length > 15) {
+							if(posts[a]["channel"]["status"].length > 23) {
 								text = posts[a]["channel"]["status"];
 							}
-							text[14] = '.';
-								for(var b= 15; b< text.length; b++) {
-									text[b] = '';
-								}
-							console.log(text[14]);
+						    for(var b= 0; b< 23; b++) {
+								array[b] = text[b];
+							}
+							array[23] = '...';
+
+							document.querySelectorAll(".block")[a].index=a;
+
 							document.querySelectorAll(".block")[a].innerHTML += "<div class='livepic'><img src='"+ posts[a]["preview"]["medium"] +  "'> </img> </div>";
 							document.querySelectorAll(".block")[a].innerHTML += "<img class='livesmall' src='"+ posts[a]["channel"]["logo"] +  "'> </img>";
-							document.querySelectorAll(".block")[a].innerHTML += "<li class='text'>"+ text + "</li>"
+							document.querySelectorAll(".block")[a].innerHTML += "<div class='text'>"+ array.join('') + "</div>";
+							document.querySelectorAll(".block")[a].innerHTML += "<div class='text_2'>"+ posts[a]["channel"]["display_name"] + "</div>";
+						}
+						if (e.target.className =='block'){
+							window.location = posts[e.target.index]["channel"]["url"];
 						}
 					}
 				}
