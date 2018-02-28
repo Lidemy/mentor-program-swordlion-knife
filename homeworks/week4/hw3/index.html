@@ -1,0 +1,36 @@
+<html>
+	
+	<head>
+
+
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded' , function () {
+				var request = new XMLHttpRequest();
+				request.open('get','https://api.twitch.tv/kraken/streams/' ,true);
+
+				request.onload =  function () {
+					if(request.status >= 200 && request.status < 400) {
+						var resp = request.respinseText;
+						var post = JSON.parse(resp);
+						console.log(post);
+					}
+				}
+
+				request.onerror = function() {
+
+				};
+
+				request.send();
+
+			})
+		</script>
+	</head>
+
+	<body>
+
+
+
+
+	</body>
+
+</html>
