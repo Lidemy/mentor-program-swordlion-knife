@@ -34,7 +34,7 @@
 				margin:30px 0px;
 			}
 			.block {
-				margin:30px 0px;
+				margin:10px 0px;
 				font-size: 22px;
 				height:150px;
 			}
@@ -63,19 +63,33 @@
 				background: lightblue;
 				color:white;
 			}
+			.red {
+				color:red;
+				margin-top: 5px;
+			}
+			#block_s {
+				height: 200px;
+			}
 		</style>
 
 		<script type="text/javascript">
 			var controller = false;
+			var controller2 = 0;
+			var output = [];
+			var dealer = [];
+			var circlecontroller = 0;
+			var circlecontroller2 = 0;
 			document.addEventListener('DOMContentLoaded' , function () {
 				document.querySelector('.container').addEventListener('click', (e) => {
+					var qforinput = document.querySelectorAll('input');
+					var qforliparent = document.querySelector('li').parentNode;
 					if(e.target.className === 'text') {
 						if (!controller) {
 							e.target.style = "border-bottom :1px solid black";
 							controller = true;
 						} else {
 							for(var a = 0; a < 4; a++){
-								document.querySelectorAll('input')[a].style = "border-bottom :1px solid lightgrey;"
+								qforinput[a].style = "border-bottom :1px solid lightgrey;"
 							}
 							e.target.style = "border-bottom :1px solid black";
 						}
@@ -85,25 +99,58 @@
 					if(e.target.className === 'li_1') {
 						e.target.style = "list-style-type:disc;";
 						document.querySelector('.li_2').style = "list-style-type:circle;"
+						circlecontroller = 1;
 					}
 
 					if(e.target.className === 'li_2') {
 						e.target.style = "list-style-type:disc;";
 						document.querySelector('.li_1').style = "list-style-type:circle;"
+						circlecontroller = 1;
 					}
 
 					if(e.target.className === 'submit') {
-						let jumpin = document.createElement("div");
-						let message = document.createTextNode("這是必填問題");
-						jumpin.appendChild(message);
-						jumpin.style="font-size:18px;";
-						jumpin.style="margin:10px 0px;";
 						for(var b = 0; b < 4 ; b++) {
-							if (document.querySelectorAll('input')[b].innerText == ''){
-								document.querySelectorAll('input')[b].style ="background: #ffebee;";
-								document.querySelectorAll('input')[b].parentNode.style = "background: #ffebee;";
-								document.querySelector('input').appendChild(jumpin);
+							if (qforinput[b].value == ''){
+								qforinput[b].style ="background: #ffebee;";
+								qforinput[b].parentNode.style = "background: #ffebee;";
+								if(!dealer[b]){
+									qforinput[b].parentNode.innerHTML += "<div class='red' id='redword'> 這是必填問題 </div>";
+									dealer[b] = true;
+								}
 							}
+							if (qforinput[b].value !== '') {
+								controller2++;
+								qforinput[b].style ="background: none;";
+								qforinput[b].parentNode.style = "background: none;";
+								if(dealer[b]){
+									qforinput[b].parentNode.removeChild(qforinput[b].parentNode.lastChild);
+								}
+							}
+						}
+						if(circlecontroller == 0) {
+							qforliparent.parentNode.style = "background: #ffebee;";
+							qforliparent.parentNode.innerHTML += "<div class='red' id='redword'> 這是必填問題 </div>";
+							circlecontroller2 = 1;
+						}
+						if(circlecontroller == 1 && circlecontroller2 ==1) {
+							qforliparent.style ="background: none;";
+							qforliparent.parentNode.style = "background: none;";
+							qforliparent.parentNode.removeChild(qforliparent.parentNode.lastChild);
+						}
+						if (controller2 == 4) {
+							for(var c = 0; c < 4 ; c++) {
+								output[c] = qforinput[c].value;
+							}
+							console.log("郵件 :",output[0])
+							console.log("暱稱 :",output[1])
+							console.log("程式背景 :",output[2])
+							console.log("其他 :",output[3])
+							alert("繳交成功");
+
+						}
+						else {
+							alert("請填滿必要訊息");
+							controller2 = 0;
 						}
 					}
 
@@ -124,18 +171,18 @@
 				<p class ='hint'>*必填</p>
 			</div>
 
-			<div class='block'>
+			<div class='block' id="block_1">
 				<div class ='block_title'>電子郵件地址 <span class='hint'>*</span></div>
 				<input type='text' class='text' placeholder="你的電子郵件"/>
 			</div>
 
-			<div class='block'>
+			<div class='block' id="block_2">
 				<div class ='block_title'>暱稱<span class='hint'>*</span></div>
 				<div class='psize'>該怎麼稱呼你</div>
 				<input type='text' class='text' placeholder="您的回答"/>
 			</div>
 
-			<div class='block'>
+			<div class='block' id ='block_s'>
 				<div class ='block_title'>報名類型<span class='hint'>*</span></div>
 				<ul>
 					<li class='li_1'>工程師培養班（每週付出四十小時，從零培養到工程師，學費是一個月薪水）</li>
@@ -143,14 +190,14 @@
 				</ul>
 			</div>
 			
-			<div class='block'>
+			<div class='block' id="block_3">
 				<div class ='block_title'>是否有程式相關背景？<span class='hint'>*</span></div>
 				<div class='psize'>範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...
 				您的回答</div>
 				<input type='text' class='text' placeholder="您的回答"/>
 			</div>
 
-			<div class='block'>
+			<div class='block' id="block_4">
 				<div class ='block_title'>其他<span class='hint'>*</span></div>
 				<div class='psize'>其他任何你想講的</div>
 				<input type='text' class='text' placeholder="您的回答"/>
