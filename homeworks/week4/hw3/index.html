@@ -1,18 +1,68 @@
 <html>
 	
 	<head>
+		<style>
+		.bigcontainer {
+			margin:auto;
+			width:80%;
+		}
+		.block {
+			top:0px;
+			position: relative;
+			display: inline-block;
+			width:30%;
+			height: 60%;
+			margin:20px 10px;
+			left:50px;
+		}
+		.livesmall {
+			width:15%;
+			height:20%;
+			margin-left:5px;
+			margin-top:15px;
+			border-image-repeat:stretch;
+			display: inline-block;
+			border-radius: 50%;
+			border:0.5px solid;
+		}
+		.text {
+			display: inline-block;
+			margin:10px;
+			font-size: 15px;
+			bottom:10px;
+			overflow: hidden;
+		}
+		</style>
 
 
 		<script type="text/javascript">
+			var text = "";
+
 			document.addEventListener('DOMContentLoaded' , function () {
 				var request = new XMLHttpRequest();
-				request.open('get','https://api.twitch.tv/kraken/streams/' ,true);
+
+				request.open('get','https://api.twitch.tv/kraken/streams?game=League%20of%20Legends&limit=20' ,true);
+				request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json');
+				request.setRequestHeader('Client-ID', 'nw4wklhsuzrv6qlmi2ck1hbvhz9vf8');
 
 				request.onload =  function () {
 					if(request.status >= 200 && request.status < 400) {
-						var resp = request.respinseText;
-						var post = JSON.parse(resp);
-						console.log(post);
+						var resp = request.responseText;
+						var posts = JSON.parse(resp).streams;
+						console.log(posts[0]);
+						for ( var a = 0; a <20; a++) {
+							if(posts[a]["channel"]["status"].length > 15) {
+								text = posts[a]["channel"]["status"];
+							}
+							text[14] = '.';
+								for(var b= 15; b< text.length; b++) {
+									text[b] = '';
+								}
+							console.log(text[14]);
+							document.querySelectorAll(".block")[a].innerHTML += "<div class='livepic'><img src='"+ posts[a]["preview"]["medium"] +  "'> </img> </div>";
+							document.querySelectorAll(".block")[a].innerHTML += "<img class='livesmall' src='"+ posts[a]["channel"]["logo"] +  "'> </img>";
+							document.querySelectorAll(".block")[a].innerHTML += "<li class='text'>"+ text + "</li>"
+						}
 					}
 				}
 
@@ -27,9 +77,101 @@
 	</head>
 
 	<body>
+		<div class='bigcontainer'>
+			<div class='container'>
+				<div class='block'>
+					
+				</div>
 
+				<div class='block'>
 
+				</div>
 
+				<div class='block'>
+					
+				</div>
+			</div>
+
+			<div class='container'>
+				<div class='block'>
+
+				</div>
+
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+			</div>
+
+			<div class='container'>
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+			</div>
+
+			<div class='container'>
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+			</div>
+
+			<div class='container'>
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+			</div>
+
+			<div class='container'>
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+				</div>
+			</div>
+
+			<div class='container'>
+				<div class='block'>
+					
+				</div>
+
+				<div class='block'>
+					
+			</div>
+
+		</div>	
 
 	</body>
 
