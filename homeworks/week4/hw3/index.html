@@ -58,8 +58,9 @@
 		<script type="text/javascript">
 			var text = "";
 			var array = [];
+			var url = [];
 
-			document.addEventListener('DOMContentLoaded' , function (e) {
+			document.addEventListener('DOMContentLoaded' , function () {
 				var request = new XMLHttpRequest();
 
 				request.open('get','https://api.twitch.tv/kraken/streams?game=League%20of%20Legends&limit=20' ,true);
@@ -84,17 +85,28 @@
 							array[23] = '...';
 
 							qforblock[a].index=a;
+							for (var c = 0; c < 20 ; c++) {
+								url[c] = posts[c]["channel"]["url"];
+							}
 
-							qforblock[a].innerHTML += "<div class='livepic'><img src='"+ posts[a]["preview"]["medium"] +  "'> </img> </div>";
+							qforblock[a].innerHTML += "<div class='livepic'><img id='pic'src='"+ posts[a]["preview"]["medium"] +  "'> </img> </div>";
 							qforblock[a].innerHTML += "<img class='livesmall' src='"+ posts[a]["channel"]["logo"] +  "'> </img>";
 							qforblock[a].innerHTML += "<div class='text'>"+ array.join('') + "</div>";
 							qforblock[a].innerHTML += "<div class='text_2'>"+ posts[a]["channel"]["display_name"] + "</div>";
 						}
-						if (e.target.className =='block'){
-							window.location = posts[e.target.index]["channel"]["url"];
-						}
 					}
 				}
+				document.querySelector('.bigcontainer').addEventListener('click' , (e) => {
+					if (e.target.className =='block'){
+						window.location = url[e.target.index];
+					}
+					if (e.target.className =='livesmall' || e.target.className == 'text' || e.target.className == 'text_2') {
+						window.location = url[e.target.parentNode.index];
+					}
+					if (e.target.id == 'pic') {
+						window.location = url[e.target.parentNode.parentNode.index];
+					}
+				})
 
 				request.onerror = function() {
 
