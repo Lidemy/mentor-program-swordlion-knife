@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style>
+		.box {
+			font-size: 30px;
+			border:1px solid;
+			width :10%;
+			display: flex;
+			justify-content: center;
+		}
+		input {
+			margin: 10px;
+			font-size: 20px;
+		}
+
+		</style>
+
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function () {
+				//化簡 document.querySelector
+				function q (name) {
+					return document.querySelector(name);
+				}
+				//funtion實作
+				function query(name) {
+					var element = q(name);
+					return {
+						hide: function() {
+							element.style.visibility = "hidden";
+						},
+						show: function() {
+							element.style.visibility = "visible";
+						}
+					}
+				}
+				q('.container').addEventListener('click' , function (e) {
+					if (e.target.value == "show") {
+						query('.box').show();
+					}
+					if (e.target.value == "hide") {
+						query('.box').hide();
+					}
+				})
+			})
+
+
+		</script>
+	</head>
+	<body>
+		<div class='box'>content</div>
+		<div class='container'>
+			<input type='button' value="show"/>
+			<input type='button' value="hide"/>
+		</div>
+	</body>
+
+
+</html>
