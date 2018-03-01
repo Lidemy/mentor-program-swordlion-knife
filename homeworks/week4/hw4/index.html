@@ -23,7 +23,7 @@
 				}
 				//funtion實作
 				function query(name) {
-					var element = document.querySelector(name);
+					var element = q(name);
 					return {
 						hide: function() {
 							element.style.visibility = "hidden";
@@ -33,7 +33,7 @@
 						}
 					}
 				}
-				document.querySelector('.container').addEventListener('click' , function (e) {
+				q('.container').addEventListener('click' , function (e) {
 					if (e.target.value == "show") {
 						query('.box').show();
 					}
