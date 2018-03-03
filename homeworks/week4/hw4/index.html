@@ -23,13 +23,12 @@
 				}
 				//funtion實作
 				function query(name) {
-					var element = q(name);
 					return {
 						hide: function() {
-							element.style.visibility = "hidden";
+							q(name).style.visibility = "hidden";
 						},
 						show: function() {
-							element.style.visibility = "visible";
+							q(name).style.visibility = "visible";
 						}
 					}
 				}
