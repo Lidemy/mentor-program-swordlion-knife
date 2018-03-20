@@ -1,0 +1,84 @@
+.bar {
+	text-align:right;
+}
+.welcome {
+	display: inline-block;
+}
+
+input {
+	margin: 10px 10px;
+}
+.logout {
+	display: inline-block;
+	text-align: right;
+	margin:0px;
+}
+
+.container {
+	width:33%;
+	margin: auto;
+	padding: 20px;
+}
+.box {
+	border:1px solid grey;
+}
+
+.content {
+	display: inline-block;
+	width:300px;
+	height:100px;
+	margin-top: 30px;
+}
+.submit {
+	margin-top:0px;
+	margin-bottom:10px; 
+}
+.contentarea {
+	border:1px solid grey;
+	width:33%;
+	margin:15px auto;
+}
+div > .nickname {
+	margin: 5px 10px;
+}
+div > .content {
+	margin: 5px 10px;
+	height: 30px;
+}
+.nickname {
+	display: inline-block;
+	width: 40%;
+}
+.time {
+	display: inline-block;
+	width: 50%;
+	text-align: right;
+	margin: 5px 10px;
+}
+.addcomments {
+	margin:10px 50px;
+	background: pink; 
+}
+.littlebox {
+	margin:10px 50px;
+	background: pink; 
+}
+.littlebox > form {
+	display: none;
+}
+.openbox {
+	width:50px;
+	margin-left: 10px;
+	color:blue;
+}
+.openbox:hover {
+	cursor: pointer;
+	color:darkblue;
+}
+.delete {
+	display: inline;
+	text-align: right;
+}
+.delete > input {
+	margin: 0px;
+}
