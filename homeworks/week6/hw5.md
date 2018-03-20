@@ -70,9 +70,13 @@
 
 ## 請去查什麼是 Session，以及 Session 跟 Cookie 的差別
 
+<<<<<<< HEAD
 	Session是PHP內建的機制，可以透過認牌不認人的機制存取資訊
 	COOKIE因為是存在client端容易被竄改或偷取
 	Session除了可以存取cookie去對應資料庫的通行證之外
 	製造出不易被竄改的亂數SESSION
 	也能比cookie存取更多資訊
 	
+=======
+## `include`、`require`、`include_once`、`require_once` 的差別
+>>>>>>> 115eedb1fa32e94a050fdcc4d085689051ffe2aa
