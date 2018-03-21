@@ -63,20 +63,40 @@
 ## 請舉出三種不同的雜湊函數
 
 	1. MD5 PHP可以直接使用md5() 來做到雜湊  但安全性好像也是最差的一個
-	2. SHA-1 加密
-	3. SHA-256 加密
-	4. bcrypt
+	2. SHA-1 雜湊  也被證明不安全 (在可接受時間內 不同輸入可以得到相同輸出)
+	3. SHA-256 雜湊函數
+	4. bcrypt 雜湊函數
+
+	### 補充雜湊跟加密的區分
+
+	加密需要密鑰，且可以透過解密得到原文。（加密可逆）
+	雜湊不需密鑰，無法逆向解出原始輸入。（雜湊不可逆）
 
 
 ## 請去查什麼是 Session，以及 Session 跟 Cookie 的差別
 
-<<<<<<< HEAD
-	Session是PHP內建的機制，可以透過認牌不認人的機制存取資訊
+	Session是瀏覽器內建的機制，可以透過認牌不認人的機制存取資訊
 	COOKIE因為是存在client端容易被竄改或偷取
 	Session除了可以存取cookie去對應資料庫的通行證之外
 	製造出不易被竄改的亂數SESSION
 	也能比cookie存取更多資訊
-	
-=======
+
 ## `include`、`require`、`include_once`、`require_once` 的差別
->>>>>>> 115eedb1fa32e94a050fdcc4d085689051ffe2aa
+
+	### include
+	使用在程式的流程敘述中，例如if...else...、while、for 敘述中
+	語法： include("function.php");
+
+	### require
+	使用在程式檔案一開頭，載入程式時會先讀取REQUIRE引入的檔案
+	語法： require("function.php");
+
+	### include_once require_once 
+	跟上述功能一樣，差別在於引入檔案前，會先檢查檔案是否已經被引入過了，如果有就不會重複引入。
+
+	### require和include不同
+
+	require適合用來引入靜態的內容，而include則適合用來引入動態的程式碼。
+    include在執行時，如果include進來的檔案發生錯誤的話，會顯示警告，不會立刻停止；
+    而require 則是會顯示錯誤，立刻終止程式，不再往下執行。
+    include可以用在迴圈；require不行。
