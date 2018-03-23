@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<style>
+			.container {
+				position: relative;
+				width:300px;
+				top:100px;
+				margin:0px auto;
+				border:1px solid black;
+			}
+			.todo {
+				height: 100px;
+				width:80%;
+				margin:30px;
+				font-size: 30px;
+			}
+			input {
+				display: inline-block;
+				margin:10px;
+			}
+			.submit {
+				padding:30px;
+			}
+			ul {
+				margin-left:50px;
+			}
+			.todolist {
+				font-size: 50px;
+				margin-right: 0px;
+			}
+			.delete {
+				margin-left: 100px;
+				margin: 30px;
+				font-size: 20px;
+				width:20%;
+			}
+			li {
+				list-style-type: circle;
+				width:60%;
+				color:white;
+			}
+		</style>
+
+			<link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+			
+			<script>
+				$(document).ready(function(e) {
+					$('.submit').click( function() {
+						if($('.todo').val()!==''){
+							$('ul').append('<li class="todolist">'+ $('.todo').val() +'</li>');
+						}
+					})
+					$('ul').click( function(e) {
+						if($(e.target).css("list-style-type")=="circle" && $(e.target).hasClass('todolist')){
+							$(e.target).css("list-style-type","disc");
+							$(e.target).attr('id','disc');
+						} else if ($(e.target).css("list-style-type")=="disc" && $(e.target).hasClass('todolist')) {
+							$(e.target).css("list-style-type","circle");
+							$(e.target).attr('id','circle');
+						}
+					})
+					$('.complete').click( function() {
+						$('li').each(function(i) {
+							var css = $(this).css("list-style-type");
+							if(css == "disc" && !$(this).next().hasClass("pp") ) {
+								$(this).after("<p class='pp'>已完成</p>");
+								$(this).css("background","red");
+							} else if (css == "disc" && $(this).next().hasClass("pp")) {
+								$(this).next().text("已完成");
+								$(this).css("background","red");
+							}
+						})
+					})
+					$('.notfinish').click( function() {
+						$('li').each(function(i) {
+							var css = $(this).css("list-style-type");
+							if(css == "disc" && !$(this).next().hasClass("pp") ) {
+								$(this).after("<p class='pp'>未完成</p>");
+								$(this).css("background","none");
+							} else if (css == "disc" && $(this).next().hasClass("pp")) {
+								$(this).next().text("未完成");
+								$(this).css("background","none");
+							}
+						})
+					})
+					$('.delete').click( function () {
+						$('li').each(function(i) {
+							var css = $(this).css("list-style-type");
+							if(css == "disc" && !$(this).next().hasClass("pp") ) {
+								$(this).remove();
+							} else if (css == "disc" && $(this).next().hasClass("pp")) {
+								$(this).next().remove();
+								$(this).remove();
+							}
+						})
+					})
+				});
+			</script>
+
+	</head>
+	<body>
+		<div class="container">
+			<h1>待辦事項</h1>
+			<input class="todo" type="text" placeholder="What needs to be done" />
+			<input class="submit" type="button" value="新增" />
+			<hr>
+			<ul>
+			</ul>
+			<button class="delete">刪除</button>
+			<button class="complete">標記已完成</button>
+			<button class="notfinish">標記未完成</button>
+		</div>
+
+	</body>
+</html>
