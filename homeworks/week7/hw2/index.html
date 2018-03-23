@@ -68,9 +68,11 @@
 							if(css == "disc" && !$(this).next().hasClass("pp") ) {
 								$(this).after("<p class='pp'>已完成</p>");
 								$(this).css("background","red");
+								$(this).css("list-style-type","circle");
 							} else if (css == "disc" && $(this).next().hasClass("pp")) {
 								$(this).next().text("已完成");
 								$(this).css("background","red");
+								$(this).css("list-style-type","circle");
 							}
 						})
 					})
@@ -80,9 +82,11 @@
 							if(css == "disc" && !$(this).next().hasClass("pp") ) {
 								$(this).after("<p class='pp'>未完成</p>");
 								$(this).css("background","none");
+								$(this).css("list-style-type","circle");
 							} else if (css == "disc" && $(this).next().hasClass("pp")) {
 								$(this).next().text("未完成");
 								$(this).css("background","none");
+								$(this).css("list-style-type","circle");
 							}
 						})
 					})
