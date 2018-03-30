@@ -1,10 +1,10 @@
-.bar {
-	text-align:right;
+body {
+	background-color:#c0dfe6; 
+	color:#111819;
 }
-.welcome {
-	display: inline-block;
+.navbar-light .navbar-brand:hover {
+	color:blue;
 }
-
 input {
 	margin: 10px 10px;
 }
@@ -13,19 +13,13 @@ input {
 	text-align: right;
 	margin:0px;
 }
-
-.container {
-	width:33%;
-	margin: auto;
-	padding: 20px;
-}
 .box {
 	border:1px solid grey;
 }
 
 .content {
 	display: inline-block;
-	width:300px;
+	width:95%;
 	height:100px;
 	margin-top: 30px;
 }
@@ -35,7 +29,7 @@ input {
 }
 .contentarea {
 	border:1px solid grey;
-	width:33%;
+	width:50%;
 	margin:15px auto;
 }
 div > .nickname {
@@ -56,12 +50,12 @@ div > .content {
 	margin: 5px 10px;
 }
 .addcomments {
-	margin:10px 50px;
-	background: pink; 
+	margin:10px 25px;
+	background: #ffe5bf; 
 }
 .littlebox {
-	margin:10px 50px;
-	background: pink; 
+	margin:10px 25px;
+	background: #ffe5bf; 
 }
 .littlebox > form {
 	display: none;
@@ -69,7 +63,7 @@ div > .content {
 .openbox {
 	width:50px;
 	margin-left: 10px;
-	color:blue;
+	color:#3e86bf;
 }
 .openbox:hover {
 	cursor: pointer;
@@ -81,4 +75,15 @@ div > .content {
 }
 .delete > input {
 	margin: 0px;
+}
+.container {
+	width:50%;
+	margin: 20px auto;
+	padding: 0px;
+}
+.navbar {
+	justify-content: space-between;
+}
+.nav-item {
+	margin-left: 15px;
 }

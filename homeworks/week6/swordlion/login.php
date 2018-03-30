@@ -1,6 +1,9 @@
-
+<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
 <style>
-
+	body {
+		background-color:#ff7d7d; 
+		color:#253031;
+	}
 	input {
 		font-size:20px;
 		margin-top: 10px;
@@ -8,7 +11,7 @@
 	
 	.container {
 		padding: 5px;
-		background: grey;
+		background: #fdf6e3;
 		width: 33%;
 		margin:50px auto;
 	}
