@@ -6,7 +6,7 @@
 	$passwords='';
 
 
-	if (isset($_POST['usernames']) && isset($_POST['passwords'])) {
+	if (isset($_POST['usernames']) && isset($_POST['passwords']) && !empty($_POST['usernames']) && !empty($_POST['passwords'])) {
 		
 		$username = $_POST['usernames']; 
 	   	$password = md5($_POST['passwords']);
@@ -41,6 +41,7 @@
 			}
 
 	}
+	echo "<script>alert ('註冊失敗，請重新註冊!');location.href ='register.php';</script>";
 
 	$conn->close();
 ?>
