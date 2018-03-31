@@ -19,7 +19,8 @@
  -MUICSS
 
 ## jQuery 是什麼？
- 我原本以為JQUERY只能用在DOM的簡化上，但後來發現他是javascript的簡化版，能做到的事有以下
+ 我原本以為JQUERY只能用在DOM的簡化上，但後來發現他是javascript預先寫好的有點像很多的function，讓我們能快速利用JQUERY達到很多JAVASCRIPT很多行程式才能做到的事。
+ 例如：
  -HTML/DOM manipulation
  -CSS manipulation
  -HTML event methods
