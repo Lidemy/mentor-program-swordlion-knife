@@ -18,13 +18,74 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>留言板</title>
+		<script src="script.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/swordlion/style.css"/>
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script src="script.js"></script>
 	</head>
+	<script method='jquery'> 
+		$(document).ready(function() {
+			$('form').submit(function(e) {
+				e.preventDefault();
+				const content = $(e.target).find('input[name=content]').val();
+				const mainoradd = $(e.target).find('input[name=mainoradd]').val();
+				
+				$.ajax ({
+					type: 'POST',
+					url: 'posttocomments.php',
+					data: {
+						content: content ,
+						mainoradd: mainoradd,
+					},
+					success: function(resp) {
+						var res = JSON.parse(resp);
+						var id = res.userid;
+						if(res.result === 'success') {
+							$('.container2').prepend(`
+								<div class='contentarea'>
+									<div class='nickname'>${res.username}</div>
+									<div class='time'>${res.time}</div>
+									<hr>
+									<div class='content'>${content}</div>
+										<div class='littlebox'>
+											<div class='openbox'>回應→</div>
+											<form action='posttocomments.php' method="POST">
+												<input class='content' name='content' type ='text' placeholder="留言內容" /><br>
+												<input type='hidden' name="mainoradd" value= ${res.userid}>
+												<input class='submit' type ='submit' value='留言'/>
+											</form>
+										</div>
+									</div>
+								`)
+						}
+						if(res.result === 'success2') {
+							
+
+							$('.littlebox').find('input[name=mainoradd]').each(function() {
+								var input_value=$(this).val();
+								if(input_value == mainoradd) {
+									$(this).parent().parent().before(`
+										<div class='addcomments'>
+											<div class='nickname'>${res.username}</div>
+											<div class='time'>${res.time}</div>
+											<hr>
+											<div class='content'>${content}</div>
+										</div>
+									`)
+								}
+							})
+							
+							
+							
+							
+						}
+					}
+				});
+			})
+		})
+	</script>
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				  <a class="navbar-brand" href="add_comments.php">留言板</a>
 				  <?php 
@@ -86,7 +147,7 @@
 			</div>
 		</div>
 
-
+		<div class='container2'>
 		<?php
 
 			require('conn.php');
@@ -122,10 +183,10 @@
 				}	
 			    require('response.php')
 		?>
-				
 				</div>
 		<?php
 				}
 			}	
 		?>
+	</div>
 </html>
