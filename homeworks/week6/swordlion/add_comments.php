@@ -65,21 +65,29 @@
 
 							$('.littlebox').find('input[name=mainoradd]').each(function() {
 								var input_value=$(this).val();
-								if(input_value == mainoradd) {
-									$(this).parent().parent().before(`
-										<div class='addcomments'>
-											<div class='nickname'>${res.username}</div>
-											<div class='time'>${res.time}</div>
-											<hr>
-											<div class='content'>${content}</div>
-										</div>
-									`)
+								if(input_value == mainoradd)  {
+									console.log($(this).parent().parent().parent().find('div[class=addcomments]').first());
+									if($(this).parent().parent().prev().hasClass('addcomments')) {
+										$(this).parent().parent().parent().find('div[class=addcomments]').first().before(`
+											<div class='addcomments'>
+												<div class='nickname'>${res.username}</div>
+												<div class='time'>${res.time}</div>
+												<hr>
+												<div class='content'>${content}</div>
+											</div>
+										`);
+									} else {
+										$(this).parent().parent().before(`
+											<div class='addcomments'>
+												<div class='nickname'>${res.username}</div>
+												<div class='time'>${res.time}</div>
+												<hr>
+												<div class='content'>${content}</div>
+											</div>
+										`);
+									}
 								}
 							})
-							
-							
-							
-							
 						}
 					}
 				});
