@@ -25,9 +25,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
-	<script method='jquery'> 
+	<script> 
 		$(document).ready(function() {
-			$('form').submit(function(e) {
+			$(document).on("submit",'form',function(e) {
 				e.preventDefault();
 				const content = $(e.target).find('input[name=content]').val();
 				const mainoradd = $(e.target).find('input[name=mainoradd]').val();
@@ -51,7 +51,7 @@
 									<div class='content'>${content}</div>
 										<div class='littlebox'>
 											<div class='openbox'>回應→</div>
-											<form action='posttocomments.php' method="POST">
+											<form class='append' action='posttocomments.php' method="POST">
 												<input class='content' name='content' type ='text' placeholder="留言內容" /><br>
 												<input type='hidden' name="mainoradd" value= ${res.userid}>
 												<input class='submit' type ='submit' value='留言'/>
@@ -62,11 +62,9 @@
 						}
 						if(res.result === 'success2') {
 							
-
 							$('.littlebox').find('input[name=mainoradd]').each(function() {
 								var input_value=$(this).val();
 								if(input_value == mainoradd)  {
-									console.log($(this).parent().parent().parent().find('div[class=addcomments]').first());
 									if($(this).parent().parent().prev().hasClass('addcomments')) {
 										$(this).parent().parent().parent().find('div[class=addcomments]').first().before(`
 											<div class='addcomments'>
@@ -76,15 +74,15 @@
 												<div class='content'>${content}</div>
 											</div>
 										`);
-									} else {
-										$(this).parent().parent().before(`
-											<div class='addcomments'>
-												<div class='nickname'>${res.username}</div>
-												<div class='time'>${res.time}</div>
-												<hr>
-												<div class='content'>${content}</div>
-											</div>
-										`);
+								} else {
+									$(this).parent().parent().before(`
+										<div class='addcomments'>
+											<div class='nickname'>${res.username}</div>
+											<div class='time'>${res.time}</div>
+											<hr>
+											<div class='content'>${content}</div>
+										</div>
+									`);
 									}
 								}
 							})
