@@ -22,7 +22,7 @@
 
 	<h1>會員註冊</h1>
 
-	<form action='/swordlion/registerr.php' method='POST'>
+	<form action='registerr.php' method='POST'>
 		帳號 :<br> <input type='text' name = 'usernames'/><br>
 		密碼 :<br> <input type='password' name = 'passwords' /><br>
 		<input type='submit' value= '送出'/>

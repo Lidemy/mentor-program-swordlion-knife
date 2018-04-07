@@ -66,7 +66,7 @@
 					$time2 = $data2["created_at"];
 				}
 				//echo "<script class='remove'>alert ('恭喜您新增了一筆留言!');</script>";
-				$arr = array('result'=>'success2','userid'=>$data2["id"],'username'=>$username,'time'=>$time2);
+				$arr = array('result'=>'success2','username'=>$username,'time'=>$time2);
 				echo json_encode($arr);
 			} else {
 				echo "<script>alert ('oops!something went wrong!'); location.href ='add_comments.php';</script>";
