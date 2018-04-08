@@ -27,7 +27,7 @@
 	</head>
 	<script method='jquery'> 
 		$(document).ready(function() {
-			$('form').submit(function(e) {
+			$(document).on("submit","form",function(e) {
 				e.preventDefault();
 				const content = $(e.target).find('input[name=content]').val();
 				const mainoradd = $(e.target).find('input[name=mainoradd]').val();
@@ -65,8 +65,7 @@
 
 							$('.littlebox').find('input[name=mainoradd]').each(function() {
 								var input_value=$(this).val();
-								if(input_value == mainoradd)  {
-									console.log($(this).parent().parent().parent().find('div[class=addcomments]').first());
+								if(input_value == mainoradd) {
 									if($(this).parent().parent().prev().hasClass('addcomments')) {
 										$(this).parent().parent().parent().find('div[class=addcomments]').first().before(`
 											<div class='addcomments'>
