@@ -1,30 +1,10 @@
-<?php
-	
-	$servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "mentor";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    mysqli_set_charset($conn , "utf8");
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }	
-
-    $conn->autocommit(false);
-    $conn->begin_transaction();
-
-?>
-
-
 <html>
 
 
 	<head>
 		<script type="text/javascript">
 			
-		</script>>
+		</script>
 		<style>
 			.bigguy {
 				margin:10px auto;
@@ -71,7 +51,7 @@
 			</div>
 		</div>
 		<div class='button'>
-			<input type='submit' value="提交" />
+			<a href="transac.php"><input type='submit' value="確認購買" /></a>
 		</div>
 	</body>
 
