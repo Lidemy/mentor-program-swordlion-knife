@@ -1,0 +1,77 @@
+<?php
+	$servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "mentor";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    mysqli_set_charset($conn , "utf8");
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }	
+
+    
+?>
+
+
+<html>
+
+
+	<head>
+		<script type="text/javascript">
+			
+		</script>>
+		<style>
+			.bigguy {
+				margin:10px auto;
+			}
+			.container {
+				height:200px;
+				border: 2px solid black;
+				background: pink;
+				width:15%;
+				display: inline-block;
+				margin-left: 50px;
+			}
+			.img {
+				font-size: 20px;
+				margin-left: 10px;
+			}
+			.button {
+				margin-left: 50px;
+			}
+			input {
+				font-size: 50px;
+			}
+		</style>
+
+
+	</head>
+
+	<body>
+		<div class='bigguy'>
+			<div class='container'>
+				<div class='img'>商品1</div>
+			</div>
+			<div class='container'>
+				<div class='img'>商品2</div>
+			</div>
+			<div class='container'>
+				<div class='img'>商品3</div>
+			</div>
+			<div class='container'>
+				<div class='img'>商品4</div>
+			</div>
+			<div class='container'>
+				<div class='img'>商品5</div>
+			</div>
+		</div>
+		<div class='button'>
+			<input type='submit' value="提交" />
+		</div>
+	</body>
+
+
+
+</html>
