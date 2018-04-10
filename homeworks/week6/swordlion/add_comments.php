@@ -1,4 +1,5 @@
 
+
 <?php
 	
 	$is_login = false;
@@ -16,7 +17,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 		<title>留言板</title>
 		<script src="script.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
