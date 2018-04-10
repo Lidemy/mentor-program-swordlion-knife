@@ -1,4 +1,5 @@
 
+
 <?php
 	
 	$is_login = false;
@@ -16,18 +17,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 		<title>留言板</title>
 		<script src="script.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/swordlion/style.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 	<script method='jquery'> 
 		$(document).ready(function() {
-			$('form').submit(function(e) {
+			$(document).on("submit","form",function(e) {
 				e.preventDefault();
 				const content = $(e.target).find('input[name=content]').val();
 				const mainoradd = $(e.target).find('input[name=mainoradd]').val();
@@ -65,8 +66,7 @@
 
 							$('.littlebox').find('input[name=mainoradd]').each(function() {
 								var input_value=$(this).val();
-								if(input_value == mainoradd)  {
-									console.log($(this).parent().parent().parent().find('div[class=addcomments]').first());
+								if(input_value == mainoradd) {
 									if($(this).parent().parent().prev().hasClass('addcomments')) {
 										$(this).parent().parent().parent().find('div[class=addcomments]').first().before(`
 											<div class='addcomments'>
