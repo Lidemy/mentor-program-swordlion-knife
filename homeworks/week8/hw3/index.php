@@ -2,9 +2,6 @@
 
 
 	<head>
-		<script type="text/javascript">
-			
-		</script>
 		<style>
 			.bigguy {
 				margin:10px auto;

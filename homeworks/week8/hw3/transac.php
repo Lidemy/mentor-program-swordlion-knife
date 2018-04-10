@@ -1,6 +1,6 @@
 <?php
-	
-	$servername = "localhost";
+    
+    $servername = "localhost";
     $username = "root";
     $password = "root";
     $dbname = "mentor";
@@ -10,7 +10,7 @@
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    }	
+    }   
 
     $conn->autocommit(false);
     $conn->begin_transaction();
@@ -26,7 +26,7 @@
         if ($row['amount']>0) {
             $stmt = $conn->prepare("UPDATE product SET amount = amount -1 WHERE id=1");
             if ($stmt->execute()) {
-                echo "product1購買成功<br>";
+                echo "product1購買成功, 剩餘數量".$row['amount']-1."<br>";
             } 
         } else {
             echo "product1購買失敗<br>";
@@ -51,6 +51,8 @@
         }
     }
 
+    //product3
+
     $stmt= $conn->prepare("SELECT amount FROM product WHERE id=3 for update");
     $stmt->execute();
     $result2=$stmt->get_result();
@@ -67,6 +69,8 @@
         }
     }
 
+    //product4
+
     $stmt= $conn->prepare("SELECT amount FROM product WHERE id=4 for update");
     $stmt->execute();
     $result3=$stmt->get_result();
@@ -82,6 +86,8 @@
             echo "product4購買失敗<br>";
         }
     }
+
+    //product5
 
     $stmt= $conn->prepare("SELECT amount FROM product WHERE id=5 for update");
     $stmt->execute();
