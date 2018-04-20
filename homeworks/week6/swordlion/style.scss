@@ -1,5 +1,11 @@
 $backcolor : #ffe5bf;
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
 .spacebetween {
   display: flex;
   justify-content: space-between;
@@ -8,10 +14,6 @@ $backcolor : #ffe5bf;
   width: 80%;
   margin: 20px auto;
   padding: 0px;
-}
-
-.container2 {
-  width: 100%;
 }
 
 body {
@@ -63,12 +65,7 @@ div {
   }
   .content {
     margin: 5px 10px;
-    height: 30px;
   }
-}
-
-.nickname {
-  display: inline-block;
 }
 
 .time {
