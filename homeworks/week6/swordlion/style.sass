@@ -1,6 +1,13 @@
+$backcolor : #ffe5bf;
+
 .spacebetween {
   display: flex;
   justify-content: space-between;
+}
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 0px;
 }
 
 .container2 {
@@ -12,9 +19,11 @@ body {
   color: #111819;
 }
 
-.navbar-light .navbar-brand:hover {
-  color: blue;
-}
+.navbar-light {
+  .navbar-brand:hover {
+    color: blue;
+  }
+} 
 
 input {
   margin: 10px 10px;
@@ -48,13 +57,14 @@ input {
   margin: 15px auto;
 }
 
-div > .nickname {
-  margin: 5px 10px;
-}
-
-div > .content {
-  margin: 5px 10px;
-  height: 30px;
+div {
+  .nickname{
+    margin: 5px 10px;
+  }
+  .content {
+    margin: 5px 10px;
+    height: 30px;
+  }
 }
 
 .nickname {
@@ -68,42 +78,34 @@ div > .content {
 
 .addcomments {
   margin: 10px 25px;
-  background: #ffe5bf;
+  background: $backcolor;
 }
 
 .littlebox {
   margin: 10px 25px;
-  background: #ffe5bf;
-}
+  background: $backcolor;
 
-.littlebox > form {
-  display: none;
+  form {
+    display:none;
+  }
 }
 
 .openbox {
   width: 50px;
   margin-left: 10px;
   color: #3e86bf;
-}
-
-.openbox:hover {
-  cursor: pointer;
-  color: darkblue;
+  :hover {
+    cursor: pointer;
+    color: darkblue;
+  }
 }
 
 .delete {
   display: inline;
   text-align: right;
-}
-
-.delete > input {
-  margin: 0px;
-}
-
-.container {
-  width: 80%;
-  margin: 20px auto;
-  padding: 0px;
+  input {
+    margin:0px;
+  }
 }
 
 .navbar {
