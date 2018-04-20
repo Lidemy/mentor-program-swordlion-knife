@@ -15,7 +15,10 @@
     "jest": "^22.0.6",
     "jquery": "^3.3.1",
     "php": "0.0.1",
-    "regenerator-runtime": "^0.11.1"
+    "postcss": "^6.0.21",
+    "regenerator-runtime": "^0.11.1",
+    "sass": "^1.2.1",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
