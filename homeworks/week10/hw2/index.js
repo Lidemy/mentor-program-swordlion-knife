@@ -1,3 +1,3 @@
 import add from './utils';
 
-add(5,10);
+console.log(add(5,10));
