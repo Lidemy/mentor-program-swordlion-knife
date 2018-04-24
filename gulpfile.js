@@ -9,7 +9,6 @@ var clean = require('gulp-clean');
 gulp.task('styles',['clean'],()=> {
     gulp.src('./gulp/*.scss')   
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./css'))
         .pipe(rename({
         	suffix: '.min'
         }))
@@ -21,7 +20,6 @@ gulp.task('es5', ['clean'],()=> {
 		.pipe(babel({
 			presets: ['env']
 		}))
-		.pipe(gulp.dest('./css'))
         .pipe(uglify())
         .pipe(rename({
         	suffix: '.min'
