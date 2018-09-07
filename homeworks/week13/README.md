@@ -1,13 +1,16 @@
 # 作業
 
-## hw1：SPA 版留言板
+## hw1：SPA 部落格
 
-在這次的作業中，我們要結合 React Router 與 Redux，把留言板變成 SPA（Single Page Applicaton），意思就是無論你怎麼操作，其實都是在同一個頁面上，背後則利用 JavaScript 以及 Ajax 跟 Server 溝通。
+在這個作業中，我們要把上一週的部落格範例變得更完整一點，請你加入以下功能：
 
-範例：待補
+1. 美化部落格主頁
+2. 美化部落格文章頁面
+3. 實作出登入以及登出功能
+4. 登入之後可以發文
 
 ## hw2：簡答題
 
-1. React Router 背後的原理大概是如何，可以簡單說明一下嗎？
-2. Redux 是什麼？
-3. Single Page Application 是什麼？有哪些頁面一定要用這個架構去設計嗎？
+1. React Router 背後的原理你猜是怎麼實作的？
+2. SDK 與 API 的差別是什麼？
+3. 在用 Ajax 的時候，預設是不會把 Cookie 帶上的，要怎麼樣才能把 Cookie 一起帶上？
