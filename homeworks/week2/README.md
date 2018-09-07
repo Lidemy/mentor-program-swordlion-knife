@@ -1,41 +1,64 @@
 # 作業
 
-## hw1：切版
+## hw1：好多星星  
+給定 n（1<=n<=30），依照規律「回傳」正確圖形（每一行是一個陣列的元素）
 
-請切出如下圖的版面：
-![](example.png)
+```
+n = 1
+["*"]
 
-不需要做到完全一樣，但可以盡你所能做的相似，除此之外，還要支援超基本的 RWD，在手機上看也不會跑版。
+n = 3
+["*", "**", "***"]
 
-你可以觀察[這個網頁](http://mentor-program.co/huli/week2/hw1/)來決定應該如何實作。
+n = 6
+["*", "**", "***", "****", "*****", "******"]
+```
 
-## hw2：仿 Medium
+## hw2：大小寫互換
+給定一字串，把小寫字母轉成大寫，大寫字母轉成小寫之後回傳，若不是英文字母則忽略。
 
-請切出如下圖的版面：
-![](example2.png)
+```
+input: nick
+output: NICK
 
-可以先觀察[這個網頁](http://mentor-program.co/huli/week2/hw2)。
+input: Nick
+output: nICK
 
-文字可以自己換成其他的，只要效果有達到就好。一樣要支援簡易的 RWD，在手機上看不會跑版（拍手會自動隱藏）。
+input: ,hEllO122
+output: ,HeLLo123
+```
 
-## hw3：Github pages
-做完上面的 Project 之後，請將你的 Github repo 開啟 Github Pages 的功能，能夠直接利用連結觀看到網頁。不知道怎麼設定的話可以參考網路上的資源。
+## hw3：判斷質數
+給定一個數字 n（1<=n<=100000），請回傳 n 是否為質數（質數的定義：除了 1 以外，所有小於他的數都無法整除）
 
-對於 hw2，你可以加上我們在課程中提過的 og tag，並且利用 [Facebook debugger](https://developers.facebook.com/tools/debug/) 驗證是否成功。
+```
+n = 2 => true
+n = 3 => true
+n = 10 => false
+n = 37 => true
+n = 38 => false
+```
 
-## hw4：CSS Diner
+## hw4：判斷迴文
+給定一個長度小於 100 的字串 s，請回傳 s 是否為迴文（迴文的定義：正著唸倒著念都一樣）
 
-請完成這個小遊戲：https://flukeout.github.io/
+```
+abcba => true
+apple => false
+aaaaa => true
+applppa => true
+```
 
-## hw5：Flexbox Froggy
+## hw5：大數加法
+給定兩個長度為 l(1<=l<=1000)的數字（但型態為字串），請回傳兩個數字相加後的結果。  
+提示：小時候怎麼做直式加法，這一題就怎麼做
 
-請完成這個小遊戲：http://flexboxfroggy.com/
+```
+"123"+"456" => "579"
+"12312383813881381381"+"129018313819319831" => "12441402127700701212"
+```
 
 ## hw6：簡答題
-
 請將答案寫在[hw6.md](hw6.md)。
 
-1. 請找出三個課程裡面沒提到的 HTML 標籤並一一說明作用。
-2. 請問什麼是盒模型（box modal）
-3. 請問 display: inline, block 跟 inline-block 的差別是什麼？
-4. 請問 position: static, relative, absolute 跟 fixed 的差別是什麼？
+1. 請寫下以上五題的解題心得

@@ -1,8 +1,7 @@
-## React Router 背後的原理大概是如何，可以簡單說明一下嗎？
+## React Router 背後的原理你猜是怎麼實作的？
 
 
-## Redux 是什麼？
+## SDK 與 API 的差別是什麼？
 
 
-## Single Page Application 是什麼？有哪些頁面一定要用這個架構去設計嗎？
-
+## 在用 Ajax 的時候，預設是不會把 Cookie 帶上的，要怎麼樣才能把 Cookie 一起帶上？

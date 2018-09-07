@@ -4,19 +4,37 @@
 
 ![](calculator.png)
 
-請用你在之前學會的網頁技術（HTML, CSS, JavaScript）打造出一個計算機。
+可參考範例：[https://lidemy.github.io/mentor-program-kristxeng/homeworks/week4/hw1/](https://lidemy.github.io/mentor-program-kristxeng/homeworks/week4/hw1/)（第一期學生 Kris 的作品）
 
-計算機要多複雜可以自己決定，你可以像截圖那樣連數學函式都做出來，但基本的功能是：
+請用你在之前學會的網頁技術（HTML, CSS, JavaScript）打造出一個簡單的計算機，功能如下：
 
 1. 要有 0 到 9
 2. 要有加減乘除
 3. 要能夠清空
 
+計算機這一題其實要難可以到很難，這個作業的目的只是想讓你熟悉基本操作而已，所以你可以用以下的範例來測試，能夠通過就好：
+
+### 測試1
+
+1. 按下 123
+2. 按下 +
+2. 按下 456
+4. 出現 579
+
+### 測試2
+
+1. 按下 20
+2. 按下 25
+3. 按下 -
+4. 出現 -5
+
 ## hw2：仿 Google 表單
 
-請實作出你們當初報名時所填寫的表單：https://goo.gl/forms/i6bB1gPJQtrrGRuQ2
+請實作出你們當初報名時所填寫的表單：https://docs.google.com/forms/d/e/1FAIpQLSeOTy7j1OjgI-q9xYaiGCJJn5w2TkpB1JNZZXXQwqCt3SsDsg/viewform
 
 ![](form.png)
+
+可參考範例：[https://lidemy.github.io/mentor-program-pychiang/homeworks/week4/hw2/](https://lidemy.github.io/mentor-program-pychiang/homeworks/week4/hw2/)（第一期學生 pychiang 的作品）
 
 背景隨便用一個顏色就好了，重點是實做出表單內容以及驗證。UI 可以不用完全一樣，只要功能有做出來就好，UI 只是讓你參考的。
 
